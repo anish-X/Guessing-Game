@@ -10,11 +10,12 @@ a user clicks a button or adds a guess to the input field.
 
 
 
-function generateWinningNumber(){
+
+function generateWinningNumber() {
     return Math.ceil(Math.random() * 100);
 }
 
-function shuffle(array){
+function shuffle(array) {
     let len = array.length;
     let t, i;
 
@@ -42,10 +43,11 @@ class Game {
     }
 
     isLower() {
-        return (this.playersGuess < this.winningNumber) ;
+        return (this.playersGuess < this.winningNumber);
     }
 
     playersGuessSubmission(number) {
+
         number = Number(number);
         if (number < 1 || number > 100 || Number.isNaN(number)) {
             throw 'That is an invalid guess.';
@@ -96,14 +98,63 @@ class Game {
             generateWinningNumber(),
             generateWinningNumber(),
         ];
-        
+
         return shuffle(hintArray);
     }
 
 }
 
-function newGame(){
+function newGame() {
     return new Game();
 }
 
+
+let game = new Game();
+const submitBtn = document.getElementById('submitBtn');
+const resetBtn = document.getElementById('resetBtn');
+const resultDisplay = document.getElementById('result');
+
+submitBtn.addEventListener('click', function() {
+    let guess = document.getElementById('value');
+
+
+
+    let result = game.playersGuessSubmission(guess.value);
+        resultDisplay.textContent = result; 
+        
+        let showGuess = document.querySelectorAll('.num');
+        for(let i = 0; i < game.pastGuesses.length; i++){
+            showGuess[i].value = game.pastGuesses[i];
+        }
+        
+        guess.value = ''; 
+    
+
+    let hints = document.querySelectorAll('.hint')
+
+    for(let i = 0; i < hints.length; i++){
+        for(let hint of game.provideHint()){
+            hints[i].value = hint;
+        }
+    }
+});
+
+resetBtn.addEventListener('click', function() {
+    game = new Game();
+    resultDisplay.innerText = '';
+
+    let showGuess = document.querySelectorAll('.num');
+
+    for(let i = 0; i < showGuess.length; i++){
+        showGuess[i].value = '';
+    }
+
+
+    let hints = document.querySelectorAll('.hint')
+
+    for(let i = 0; i < hints.length; i++){
+            hints[i].value = '';
+        
+    }
+})
 
