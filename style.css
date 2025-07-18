@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #CFDEE7;
+
+}
+
+.container{
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    background-color: #92B4F4;
+    border-radius: 8px;
+}
+
+.circle{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    margin-bottom: 24px;
+    font-size: 24px;
+}
+
+.input-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+#submitBtn,
+#resetBtn {
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #4B72C2;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#submitBtn:hover,
+#resetBtn:hover {
+    background-color: #3459a4;
+}
+
+
+span{
+    width: 50px;
+}
+
+ #value,
+ #value:focus{
+    font-size: 24px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    outline: none;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.inputs{
+    margin-bottom: 40px;
+
+}
+
+.num{
+    width: 60px;
+    height: 40px;
+    border-radius: 6px;
+    font-size: 24px;
+    text-align: center;
+}
+.hint{
+      width: 60px;
+    height: 40px;
+    border-radius: 6px;
+    font-size: 24px;
+    text-align: center;
+}
+.hints{
+    color: #37474f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    position: absolute;
+    right: 60%;
+    top: 38%;
+    left: 34%;
+}
+
+.num:focus,
+.num:hover{
+    outline: none;
+}
+.num:focus{
+    outline: none;
+}
+
+p{
+    color: #34495e;
+    margin-top: -10px;
+    padding-bottom: 20px;
+}
+
+#result{
+    font-style: italic;
+}
+
+h1{
+    color: #2c3e50;
+    margin-top: 30px;
+}
