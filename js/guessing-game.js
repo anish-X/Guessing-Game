@@ -59,6 +59,7 @@ class Game {
 
     checkGuess() {
         if (this.playersGuess === this.winningNumber) {
+            this.pastGuesses.push(this.playersGuess)
             return 'You Win!'
         }
 
@@ -132,11 +133,21 @@ submitBtn.addEventListener('click', function() {
 
     let hints = document.querySelectorAll('.hint')
 
-    for(let i = 0; i < hints.length; i++){
-        for(let hint of game.provideHint()){
+
+    if(game.pastGuesses.length === 4){
+        game.provideHint().forEach((hint, i) => {
             hints[i].value = hint;
-        }
+        })
     }
+
+    // if(game.pastGuesses.length > 3 && game.pastGuesses.length === 4){
+    //     for(let i = 0; i < hints.length; i++){
+    //     for(let hint of game.provideHint()){
+    //         hints[i].value = hint;
+    //     }
+    // }
+    // }
+    
 });
 
 resetBtn.addEventListener('click', function() {
