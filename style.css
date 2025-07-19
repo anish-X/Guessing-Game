@@ -17,14 +17,16 @@ body{
 }
 
 .container{
-    width: 600px;
-    height: 400px;
+    width: 100%;
+    max-width: 450px;
+    min-height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center; 
     background-color: #92B4F4;
     border-radius: 8px;
+    position: relative;
 }
 
 .circle{
@@ -115,10 +117,11 @@ input[type=number] {
     align-items: center;
     justify-content: center;
     gap: 6px;
+    margin-right: 40px;
     position: absolute;
-    right: 60%;
-    top: 38%;
-    left: 34%;
+    /* right: 60%; */
+    top: 28%;
+    left: 3%;
 }
 
 .num:focus,
